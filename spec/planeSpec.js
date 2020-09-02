@@ -3,9 +3,9 @@
 describe('Plane', function () {
   var plane;
   beforeEach(function () {
-    plane = new plane();
+    plane = new Plane();
   });
   it('can land at an airport', function () {
-    expect(plane.land).not.toBeUndefined()
-  })
+    expect(plane.land).not.toBeUndefined();
+  });
 });
