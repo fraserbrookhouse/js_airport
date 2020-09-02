@@ -5,13 +5,18 @@ describe('Airport', function () {
   var plane;
   beforeEach(function () {
     airport = new Airport();
-    plane = jasmine.createSpy('plane,'['land'])
+    plane = jasmine.createSpy('plane,'['land', 'takeOff']);
   });
   it('has no planes by default', function () {
     expect(airport.planes()).toEqual([]);
   });
   it('can clear planes for landing', function () {
-    airport.clearForLanding(plane)
+    airport.clearForLanding(plane);
     expect(airport.planes()).toEqual([plane]);
-  })
+  });
+  it('can clear planes for takeff', function () {
+    airport.clearForLanding(plane);
+    airport.clearForTakeOff(plane);
+    expect(airport.planes()).toEqual([]);
+  });
 });
